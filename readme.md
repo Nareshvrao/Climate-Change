@@ -13,20 +13,23 @@ Removing more empty masks using cls both pixel-level (segmentation) and image-le
 Baseline results for the 2-stage segmentation
 
 ##Model summary:
-
-* Network: Resnet34-FPN
-* Image size: 384x576
-* Batch size: 16
-* Optimizer: Adam
-* Scheduler: reduceLR for seg1, warmRestart for seg2.
-* Augmentations: H/V flip, ShiftScalerRotate and GridDistortion
-* TTA: raw, Horizontal Flip, Vertical Flip
+```
+. Network: Resnet34-FPN
+. Image size: 384x576
+. Batch size: 16
+. Optimizer: Adam
+. Scheduler: reduceLR for seg1, warmRestart for seg2.
+. Augmentations: H/V flip, ShiftScalerRotate and GridDistortion
+. TTA: raw, Horizontal Flip, Vertical Flip
+```
 
 ##Results:
+```
 
-* 1-fold: 0.664
-* 5-fold + TTA3: 0.669
-* 5-fold + TTA3 + classifier: 0.670.
+. 1-fold: 0.664
+. 5-fold + TTA3: 0.669
+. 5-fold + TTA3 + classifier: 0.670.
+```
 
 TTA1 means only raw images; TTA3 means raw + H/V flip.
 

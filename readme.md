@@ -1,33 +1,32 @@
-#Kaggle Understanding Clouds from Satellite Images Challenge.
+##Kaggle Understanding Clouds from Satellite Images Challenge.
 
-n summary the pipeline looks like:
+Pipeline looks like:
 
-seg1: a multi-label segmentation model trained with BCE loss
-seg2: a multi-label segmentation model trained with pos-only soft DICE loss
-cls: a multi-label classifier trained with BCE loss.
-The final submission is achieved by the following steps:
+*seg1: a multi-label segmentation model trained with BCE loss
+*seg2: a multi-label segmentation model trained with pos-only soft DICE loss
+*cls: a multi-label classifier trained with BCE loss.
 
-Get predictions using seg1
-Replacing the non-empty masks from seg1 by predictions from seg2
-Removing more empty masks using cls
-Both pixel-level (segmentation) and image-level (classifier) thresholds are 0.5.
+Get predictions using seg1 replacing the non-empty masks from seg1 by predictions from seg2
+
+Removing more empty masks using cls both pixel-level (segmentation) and image-level (classifier) thresholds are 0.5.
 
 Baseline results for the 2-stage segmentation
-Model summary:
 
-Network: Resnet34-FPN
-Image size: 384x576
-Batch size: 16
-Optimizer: Adam
-Scheduler: reduceLR for seg1, warmRestart for seg2.
-Augmentations: H/V flip, ShiftScalerRotate and GridDistortion
-TTA: raw, Horizontal Flip, Vertical Flip
+##Model summary:
 
-Results:
+* Network: Resnet34-FPN
+* Image size: 384x576
+* Batch size: 16
+* Optimizer: Adam
+* Scheduler: reduceLR for seg1, warmRestart for seg2.
+* Augmentations: H/V flip, ShiftScalerRotate and GridDistortion
+* TTA: raw, Horizontal Flip, Vertical Flip
 
-1-fold: 0.664
-5-fold + TTA3: 0.669
-5-fold + TTA3 + classifier: 0.670.
+##Results:
+
+* 1-fold: 0.664
+* 5-fold + TTA3: 0.669
+* 5-fold + TTA3 + classifier: 0.670.
 
 TTA1 means only raw images; TTA3 means raw + H/V flip.
 
@@ -60,7 +59,6 @@ PL means the model is retrained with pseudo labels
 
 This model achieves 0.6794 LB.
 
-On the last day, I decide to optimize the classifier threshold channel wise to achieve the best local CV, which gives me 0.6805 LB.
 ## Solution Overview
 ![image](overview.png)
 

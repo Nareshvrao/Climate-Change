@@ -109,15 +109,15 @@ $ python make_folds.py
 There are 4 steps to reproduce the model from scratch. Shell command to run each step is below.
 1. Train seg1 model and predict.
 ```
-$ bash ./kaggle-cloud-organization/run_seg1.sh
+$ bash run_seg1.sh
 ```
 2. Train seg2 models and predict.
 ```
-$ bash ./kaggle-cloud-organization/run_seg2.sh
+$ bash run_seg2.sh
 ```
 3. Train cls model and predict.
 ```
-$ bash ./kaggle-cloud-organization/run_cls.sh
+$ bash run_cls.sh
 ```
 4. Ensemble the final predictions
 ```
@@ -125,7 +125,7 @@ $ cd output
 $ mkdir -p b5-Unet-inception-FPN-b7-Unet-b7-FPN-b7-FPNPL
 $ mkdir -p ensemble
 $ cd ..
-$ python ./kaggle-cloud-organization/mask-ensemble-5fold.py
-$ python ./kaggle-cloud-organization/2-stage-ensemble-5fold.py
+$ python mask-ensemble-5fold.py
+$ python 2-stage-ensemble-5fold.py
 ```
 The final prediction file can be found as ./output/ensemble/test_5fold_tta3_cls.csv

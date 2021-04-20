@@ -1,4 +1,4 @@
-## Kaggle Understanding Clouds from Satellite Images Challenge.
+## Understanding of Clouds from Satellite Images https://www.kaggle.com/c/understanding_cloud_organization 
 ![image](cloud.png)
 Pipeline looks like:
 

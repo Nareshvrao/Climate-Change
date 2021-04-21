@@ -1,7 +1,7 @@
-# @Author: Xuan Cao <xuan>
-# @Date:   2019-12-22, 12:18:33
-# @Last modified by:   xuan
-# @Last modified time: 2019-12-22, 1:33:35
+# @Author: Naresh Venkataramanan<Nareshvrao>
+# @Date:   2019-12-22, 12:44:08
+# @Last modified by:   Naresh
+# @Last modified time: 2019-12-22, 1:13:26
 
 
 
@@ -13,10 +13,10 @@ import multiprocessing as mp
 
 SIZE = 384
 
-df_train = pd.read_csv('../input/train.csv')
-df_test = pd.read_csv('../input/sample_submission.csv')
-DATA_ROOT = '../input/images/'
-OUTPUT_DIR = '../input/images_%d/'%SIZE
+df_train = pd.read_csv('understanding_cloud_organization/train.csv')
+df_test = pd.read_csv('understanding_cloud_organization/sample_submission.csv')
+DATA_ROOT = 'understanding_cloud_organization/train_images/images/'
+OUTPUT_DIR = 'understanding_cloud_organization/train_images/images_%d/'%SIZE
 
 image_names = df_train['Image_Label'].apply(lambda x: x.split('_')[0]).unique().tolist()
 image_names += df_test['Image_Label'].apply(lambda x: x.split('_')[0]).unique().tolist()

@@ -1,5 +1,5 @@
 ## Understanding of Clouds from Satellite Images https://www.kaggle.com/c/understanding_cloud_organization 
-![image](cloud.png)
+![image](cloud.jpg)
 Pipeline looks like:
 
 ```
